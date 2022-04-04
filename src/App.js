@@ -1,21 +1,25 @@
 
 import './App.css';
-import Layout from './Layout/Layout';
+
 import Homepage from './pages/Homepage';
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Link
+  Routes
 } from "react-router-dom";
+
+import CartPage from './pages/Cart/Cart';
+import CartProvider from './Providers/CartProvider';
 
 function App() {
   return (
     <Router>
-    <div className="App">
-      <Homepage/>
-    </div>
-
+      <CartProvider>
+      <Routes>
+        <Route path='/' element={<Homepage/>}/>
+        <Route path='/cart' element={<CartPage/>}/>
+      </Routes>
+      </CartProvider>
     </Router>
   );
 }

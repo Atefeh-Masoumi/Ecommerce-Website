@@ -10,3 +10,46 @@
  body{
    background-color: #f6f6f6;
  }
+ .productlist{
+   margin-top: 50px;
+   background-color: rgb(216, 128, 128);
+   display:  grid;
+   grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+   grid-column-gap: 5rem;
+   grid-row-gap: 5rem;
+  
+   max-width: 1170 px;
+   width: 90vw;
+
+ }
+ .product{
+   background-color: #e2e2e2;
+   border-radius: 5px;
+   display: flex;
+   flex-direction: column;
+   padding: 10px;
+ }
+.product img {
+  width: 100%;
+  height: auto;
+}
+.container{
+  display: flex;
+  justify-content: center;
+}
+.productdesc{
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.btn{
+  border: none;
+  outline: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.primary{
+  background-color: #6d28d9;
+  color: #fff;
+}
