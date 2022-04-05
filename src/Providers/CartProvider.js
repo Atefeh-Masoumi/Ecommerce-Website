@@ -9,7 +9,7 @@ const initialState={
     total:0,
 }
 const CartProvider=({children})=>{
-    const[cart, dispatch]= useReducer(cartReducer,[]);
+    const[cart, dispatch]= useReducer(cartReducer,initialState);
     return(
         <CartContex.Provider value={cart}>
             <CartContexDispatcher.Provider value={dispatch}>

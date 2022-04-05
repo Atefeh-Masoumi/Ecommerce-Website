@@ -1,15 +1,24 @@
 import Layout from "../Layout/Layout";
 import * as data from "../data"
+import { useCart, useCartAction } from "../Providers/CartProvider";
+import { checkIncart } from "../utils/checkinCart";
+import { toast } from "react-toastify";
+
 const Homepage = () => {
+     const {cart} = useCart();
+
+    const dispatch = useCartAction();
     const addProductHandler =(product)=>{
-        console.log(product);
+        // console.log(product);
+        toast.success(`${product.name} added to cart`)
+        dispatch({type:"ADD_TO_CART",payload:product})
 
     }
     return (  
         <>
         <Layout/>
             <main className="container">
-                <section className="productlist">{data.products.map((product)=> 
+                <section className="productlist" >{data.products.map((product)=> 
 
                     <section className="product" key={product.id}>
                         <div className="productimage">
@@ -18,7 +27,7 @@ const Homepage = () => {
                         <div className="productdesc">
                         <p>{product.name}</p>
                         <p>$ {product.price}</p>
-                        <button onClick={()=>addProductHandler(product)}className="btn primary">Add to Cart</button>
+                        <button onClick={()=>addProductHandler(product)}className="btn primary">{checkIncart(cart,product) ? "In Cart":"Add to Cart"}</button>
                         </div>
                     </section>
                               
