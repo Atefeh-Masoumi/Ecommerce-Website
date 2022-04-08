@@ -10,7 +10,7 @@ function addProudct(state,payload){
       updatedCart[index]=updatedItem;
     }
        
-    return {...state,cart:updatedCart, total:state.total+ payload.price,}
+    return {...state,cart:updatedCart, total:state.total+ payload.offPrice,}
 
 }
 const removeProductfromCart=(state, payload)=>{
@@ -20,16 +20,15 @@ const removeProductfromCart=(state, payload)=>{
 
     if(updatedItem.quantity === 1){
       const filteredproduct =  updatedCart.filter(item=>item.id !== payload.id);
-        return {...state,cart:filteredproduct, total:state.total- payload.price,}
+        return {...state,cart:filteredproduct, total:state.total- payload.offPrice,}
 
     }else{
         updatedItem.quantity--;
         updatedCart[index] = updatedItem;
 
-        return {...state,cart:updatedCart, total:state.total - payload.price,}
+        return {...state,cart:updatedCart, total:state.total - payload.offPrice,}
     }
     
-
 }
 const cartReducer=(state,action)=>{
 switch (action.type){
