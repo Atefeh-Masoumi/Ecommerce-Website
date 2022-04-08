@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Layout from "../../Layout/Layout";
 import { useCart,useCartAction } from "../../Providers/CartProvider";
 import'./cart.css';
@@ -66,6 +67,10 @@ const CartSummary = ({total,cart})=>{
                 <p>cart net price:</p>
                 <p>{total}$</p>
             </div>
+            <Link to="/checkout">
+
+            <button className="btn primary" style={{marginTop:"20px",width:"100%"}}>Go to CheckOut</button>
+            </Link>
                 
         </section>
     );

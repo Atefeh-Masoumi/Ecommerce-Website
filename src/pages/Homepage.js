@@ -10,7 +10,7 @@ const Homepage = () => {
     const dispatch = useCartAction();
     const addProductHandler =(product)=>{
         // console.log(product);
-        toast.success(`${product.name} added to cart`)
+        toast.success(`${product.name} added to cart`);
         dispatch({type:"ADD_TO_CART",payload:product})
 
     }

@@ -1,0 +1,21 @@
+
+  
+  button {
+    display: flex;
+  justify-content: center;
+    align-items: center;
+    width: 50px;
+  }
+  
+  
+  .form {
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+  }
+  
+  
+  
+  
