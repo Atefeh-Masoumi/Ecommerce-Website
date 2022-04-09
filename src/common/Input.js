@@ -1,7 +1,7 @@
 import'./input.css';
 const Input = ({formik,name,label, type="text"}) => {
     return ( 
-        <div className="form">
+        <div className="formControl">
             <div >
                 <label htmlFor={name}>{label} : </label>
                 <input id={name} type={type}  name={name}

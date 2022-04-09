@@ -3,3 +3,6 @@ button:disabled{
     background-color: rgb(181, 173, 173);
     color: #444;
 }
+a{
+    text-decoration: none;
+}
