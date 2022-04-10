@@ -1,6 +1,7 @@
 function addProudct(state,payload){
     const updatedCart = [...state.cart];
-    const index = updatedCart.findIndex((item)=>item.id=== payload.id);
+    const index = updatedCart.findIndex((item)=>item.id === payload.id);
+    
     if(index<0){
         updatedCart.push({...payload, quantity:1});
 

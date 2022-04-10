@@ -1,3 +1,4 @@
+import Checkout from "../component/checkout/Checkout";
 import Layout from "../Layout/Layout";
 
 const CheckoutPage = () => {
@@ -6,7 +7,7 @@ const CheckoutPage = () => {
             <>
             <Layout/>
 
-            <div>CheckOut</div>
+            <Checkout/>
             
             </>
        

@@ -15,10 +15,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import CheckoutPage from './pages/CheckoutPage';
 import Login from './pages/LoginPage';
 import SignUp from './pages/SignupPage';
+import AuthProvider from './Providers/AuthProvider';
+import ProfilePage from './pages/ProfilePage';
 
 function App() {
   return (
     <Router>
+      <AuthProvider>
       <CartProvider>
         <ToastContainer />
         <Routes>
@@ -27,9 +30,11 @@ function App() {
           <Route path='/checkout' element={<CheckoutPage />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
+          <Route path='/profile' element={<ProfilePage />} />
         
         </Routes>
       </CartProvider>
+      </AuthProvider>
     </Router>
   );
 }
