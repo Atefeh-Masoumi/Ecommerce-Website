@@ -1,0 +1,21 @@
+
+.cartItemList{
+    display: flex;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    flex-direction: column;
+    flex:1;
+    padding: 1rem;
+}
+.cartSummery{
+    padding: 1rem;
+    display: flex;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    flex-direction: column;
+    width: 30%;
+    margin-left: 3rem;
+
+}
