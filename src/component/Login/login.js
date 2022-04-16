@@ -8,11 +8,13 @@ import { loginUser } from "../../Services/LoginService";
 import { useAuthAction,useAuth } from "../../Providers/AuthProvider";
 import {useQuery} from './../../hooks/useQuery'
 
+// inital values for the form
 const initialValues = {
     email: "",
     password: "",
 };
 
+// Yup schema for form validation
 const validationSchema = Yup.object({
     email: Yup.string().email("Invalid email format").required("Email is required"),
     password: Yup.string().required("password is required"),
@@ -20,19 +22,21 @@ const validationSchema = Yup.object({
 
 
 const LoginForm = () => {
-
+  // error state
     const[err, setError]= useState(null);
     const history = useNavigate()
     const query = useQuery();
-   
-     const redirect = query.get('redirect') || "/";
-    const setAuth = useAuthAction();
+    const redirect = query.get('redirect') || "/";
+
+    // useAuthActions to dispatch actions
+     const setAuth = useAuthAction();
     const userData = useAuth();
 
     useEffect(()=>{
         if(userData) history(redirect);
     },[redirect,userData])
 
+      // submit handler
     const onSubmit= async(values)=>{
        
         try {
@@ -50,6 +54,7 @@ const LoginForm = () => {
         }
     };
 
+    // useFormik hook
     const formik = useFormik({
         initialValues,
         onSubmit,
@@ -58,17 +63,20 @@ const LoginForm = () => {
     });
 
     return (
-        <form onSubmit={formik.handleSubmit} className="form">
-            <Input formik={formik} name="email" label="Email" type="email" />
-            <Input formik={formik} name="password" label="Password" type='password' autocomplete="on" />
-            <button type="submit" disabled={!formik.isValid} className="btn primary btnlg"> Log In</button>
-            {err&&<p style={{color:"red",marginTop:"20px"}}> {err}</p>}
-            <Link to={`/signup?redirect=${redirect}`}>
-                <p className="alreadylogin">Not have an Account yet? </p>
-            </Link>
+        <div className="formContainer">
+            <form onSubmit={formik.handleSubmit} >
+                <Input formik={formik} name="email" label="Email" type="email" />
+                <Input formik={formik} name="password" label="Password" type='password' autocomplete="on" />
+                
+                <button type="submit" disabled={!formik.isValid} className="btn primary btnlg"> Log In</button>
+                {err&&<p style={{color:"red",marginTop:"20px"}}> {err}</p>}
+                <Link to={`/signup?redirect=${redirect}`}>
+                    <p className="alreadylogin">Not have an Account yet? </p>
+                </Link>
             
 
-        </form>
+            </form>
+        </div>
     );
 }
 

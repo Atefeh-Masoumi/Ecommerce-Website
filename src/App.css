@@ -12,7 +12,7 @@
  }
  .productlist{
    margin-top: 50px;
-   background-color: rgb(216, 128, 128);
+   
    display:  grid;
    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
    grid-column-gap: 5rem;
@@ -45,9 +45,11 @@
 .btn{
   border: none;
   outline: none;
-  padding: 6px 10px;
   border-radius: 5px;
   cursor: pointer;
+  padding: 6px 15px;
+  background-color: #ede9fe;
+  color: #6d28d9;
 }
 .primary{
   background-color: #6d28d9;

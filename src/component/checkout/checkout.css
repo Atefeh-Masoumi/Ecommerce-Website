@@ -19,3 +19,34 @@
     margin-left: 3rem;
 
 }
+.buyer-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .buyer-info h3 {
+    margin-bottom: 10px;
+  }
+  .buyer-info div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  .buyer-info div p {
+    font-weight: 400;
+  }
+  .buyer-info div span {
+    font-weight: 500;
+  }
+  .receiptTitle {
+    margin-bottom: 10px;
+  }
+  .finalItems-buy {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  .buyBtn {
+    margin-top: 2rem;
+  }
+  

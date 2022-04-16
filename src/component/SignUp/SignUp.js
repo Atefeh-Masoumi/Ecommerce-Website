@@ -8,7 +8,7 @@ import { useState,useEffect } from "react";
 import { useAuthAction,useAuth } from "../../Providers/AuthProvider";
 import {useQuery} from './../../hooks/useQuery'
 
-
+// inital values for the form
 const initialValues={
     name:"",
     email:"",
@@ -16,7 +16,7 @@ const initialValues={
     password:"",
     passwordconfirm:"",
 };
-
+// Yup schema for form validation
 const validationSchema = Yup.object({
     name:Yup.string().required("Name is required").min(4,"Name lenght is not Valid"),
     email:Yup.string().email("Invalid email format").required("Email is required"),
@@ -30,16 +30,23 @@ const validationSchema = Yup.object({
 
 
 const SignupForm = () => {
+    // useAuthActions to dispatch actions and useAuth to get the auth state
     const setAuth=useAuthAction();
     const history = useNavigate();
+    // useQuery hook to get the query params and redirect
      const query = useQuery();
      const redirect = query.get('redirect') || "/";
+
+      // error state
     const [error, setError]=useState(null);
     const userData = useAuth();
 
+// useEffect to check if the user is already logged in
     useEffect(()=>{
         if(userData) history(redirect);
     },[redirect,userData]);
+
+    // submit handler
     const onSubmit= async(values)=>{
         const {name,email,phoneNumber,password} = values;
         const userData={
@@ -63,6 +70,7 @@ const SignupForm = () => {
         }
     };
 
+      // useFormik hook
     const formik = useFormik({
         initialValues,
         onSubmit,
@@ -70,22 +78,22 @@ const SignupForm = () => {
         validateOnMount: true,
       });
     return ( 
-        <>
-            <form onSubmit={formik.handleSubmit} className="form">
+        <div className="formContainer">
+            <form onSubmit={formik.handleSubmit} >
                 <Input formik={formik} name="name" label="Name" />
                 <Input formik={formik} name="email" label="Email" type="email" />
                 
                 <Input  formik={formik} name="phoneNumber" label="Number" type="tel"/>
                 <Input  formik={formik} name="password" label="Password" type='password' autocomplete="on"/>
                 <Input  formik={formik} name="passwordconfirm" label="Password Confirm" type='password'/>
-                <button type="submit" disabled={!formik.isValid} className="btn primary btnsign"> Sign Up</button>
+                <button type="submit" disabled={!formik.isValid} className="btn primary btnsg" > Sign Up</button>
                 {error&&<p style={{color:"red"}}> {error}</p>}
                 
                 <Link to={`/login?redirect=${redirect}`}>
-                    <p className="alreadylogin">Already Login?</p>
+                    <p className="alreadylogin">Already have an account? Login from here</p>
                 </Link>
             </form>
-        </>
+        </div>
     );
 }
  

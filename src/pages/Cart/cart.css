@@ -8,12 +8,15 @@
     padding: 1rem;
 }
 
+
 .cartItem{
 display: flex;
 align-items: center;
 justify-content: space-between;
 border-bottom: 1px solid #ccc;
+
 }
+
 .cartItem .itemImage{
     width: 100px;
     height: 100px;

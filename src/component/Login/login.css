@@ -1,9 +1,13 @@
-.btnlg {
-    display: flex;
+.formContainer {
+  display: flex;
   justify-content: center;
-    align-items: center;
-   width: 30vw;
-  }
+  margin-top: 20px;
+}
+.btnlg{
+  width: 100%;
+  padding-top: 10px;
+  font-size: 16px ;
+}
   .form {
     margin: 5px;
     padding: 10px;

@@ -3,13 +3,13 @@ import * as data from "../data"
 import { useCart, useCartAction } from "../Providers/CartProvider";
 import { checkIncart } from "../utils/checkinCart";
 import { toast } from "react-toastify";
+import Header from "./Header";
 
 const Homepage = () => {
      const {cart} = useCart();
 
     const dispatch = useCartAction();
     const addProductHandler =(product)=>{
-        // console.log(product);
         toast.success(`${product.name} added to cart`);
         dispatch({type:"ADD_TO_CART",payload:product})
 
@@ -17,6 +17,7 @@ const Homepage = () => {
     return (  
         <>
         <Layout/>
+        <Header/>
             <main className="container">
                 <section className="productlist" >{data.products.map((product)=> 
 
