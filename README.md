@@ -2,7 +2,7 @@ This project is a sample React Ecommerence store  I'm developing it by ReactJS :
 
 
 Libraries and Technologies :
-- React-router-dom
+- React-router-dom v6
 - Context to send data and global states through the app
 - costume hooks
 - MUI
@@ -11,8 +11,7 @@ Libraries and Technologies :
 - react-hot-toast to handle messages
 - Formik to handle forms
 - Yup for validation
-- Swiper for photo slider
-- react-icons/ mui-icons
+- react-icons
  
 Back-end :
 - NodeJS
