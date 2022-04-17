@@ -1,4 +1,4 @@
-This project is a sample React Ecommerence store  I'm developing it by ReactJS :
+This project is a sample Ecommerence store  I'm developing it by ReactJS :
 
 
 Libraries and Technologies :
