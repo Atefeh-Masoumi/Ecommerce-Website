@@ -13,10 +13,10 @@ Libraries and Technologies :
 - Yup for validation
 - Swiper for photo slider
 - react-icons/ mui-icons
-- 
+ 
 Back-end :
 - NodeJS
-- 
+ 
 Database :
 - Mongodb
 
