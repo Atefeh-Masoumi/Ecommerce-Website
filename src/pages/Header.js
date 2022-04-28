@@ -7,7 +7,6 @@ import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 
 
-
 const Header= () => {
   useEffect(() => {
     Aos.init({ duration: 2000 });
