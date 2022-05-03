@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
+.header{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    
+}
+.bgimage{
+    width: 100%;
+    height: 100vh;
+}
+.image{
+    width: 100%;
+    height: 100%;
+}
+
+.overlay{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.2));
+    
+    
+}
+.text{
+    position: absolute;
+    text-align: center;
+    color:#fff;
+    top: 50%;
+    left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+
+.header_btn{
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 10px;
+    outline: none;
+    background:#6d28d9;
+    color: #fff;
+    border: none;
+    transition: all 2s;
+    font-weight: bold;
+    font-size: large;
+}
+
+.header_btn:hover{
+    transform: scale(1.2);
+}
+
+.txth{
+    margin: 5px;
+    font-family:'Oleo Script Swash Caps', cursive;
+    font-weight: bold;
+    
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: #fff;
+  }
+
+  .title-word {
+    animation: color-animation 4s linear infinite;
+  }
+  
+  .title-word-1 {
+    --color-1: #DF8453;
+    --color-2: #3D8DAE;
+    --color-3: #E4A9A8;
+  }
+  
+  .title-word-2 {
+    --color-1: #DBAD4A;
+    --color-2: #ACCFCB;
+    --color-3: #17494D;
+  }
+  
+  .title-word-3 {
+    --color-1: #ACCFCB;
+    --color-2: #E4A9A8;
+    --color-3: #ACCFCB;
+  }
+  
+  .title-word-4 {
+    --color-1: #3D8DAE;
+    --color-2: #DF8453;
+    --color-3: #E4A9A8;
+  }
+  
+  @keyframes color-animation {
+    0%    {color: var(--color-1)}
+    32%   {color: var(--color-1)}
+    33%   {color: var(--color-2)}
+    65%   {color: var(--color-2)}
+    66%   {color: var(--color-3)}
+    99%   {color: var(--color-3)}
+    100%  {color: var(--color-1)}
+  }
+  
