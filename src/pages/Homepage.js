@@ -5,7 +5,6 @@ import { checkIncart } from "../utils/checkinCart";
 import { toast } from "react-toastify";
 import Header from "./Header";
 import Footer from "./FooterPage";
-
 const Homepage = () => {
      const {cart} = useCart();
 
@@ -36,7 +35,6 @@ const Homepage = () => {
                 )}
                 </section>
             </main>
-
             <Footer/>
         </>
         
