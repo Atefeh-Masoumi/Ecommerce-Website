@@ -22,6 +22,7 @@
     margin: 1rem;
     gap:50px;
    padding-bottom: 20px;
+   color:#4c1d95;
 }
 .icon a{
     transition: all 2s;
